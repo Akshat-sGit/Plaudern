@@ -18,8 +18,10 @@ const kMessageContainerDecoration = BoxDecoration(
   ),
 );
 
+bool passwordVisible = true;
+
 const decoration = InputDecoration(
-  hintText: 'Enter your email',
+  // hintText: 'Enter your email',
   hintStyle: TextStyle(color: Colors.black26),
   contentPadding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
   border: OutlineInputBorder(

@@ -51,8 +51,7 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
               onChanged: (value) {
                 //Do something with the user input.
-                // print(value); 
-              },
+              },  
               decoration: decoration.copyWith(hintText: "Enter your password"),
             ),
             const SizedBox(
