@@ -34,6 +34,8 @@ class _LoginScreenState extends State<LoginScreen> {
               height: 48.0,
             ),
             TextField(
+              keyboardType: TextInputType.emailAddress,
+              textAlign: TextAlign.center,
               style:const TextStyle(
                 color: Colors.black, 
               ),
@@ -46,6 +48,7 @@ class _LoginScreenState extends State<LoginScreen> {
               height: 8.0,
             ),
             TextField(
+              textAlign: TextAlign.center,
               style:const TextStyle(
                 color: Colors.black,
               ),
@@ -53,6 +56,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 //Do something with the user input.
               },  
               decoration: decoration.copyWith(hintText: "Enter your password"),
+              obscureText: true, 
             ),
             const SizedBox(
               height: 24.0,
