@@ -18,7 +18,7 @@ class FlashChat extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData.dark().copyWith(
-        textTheme:const TextTheme(
+        textTheme: const TextTheme(
           titleLarge: TextStyle(
             color: Colors.black54,
             fontSize: 45.0,
@@ -26,12 +26,13 @@ class FlashChat extends StatelessWidget {
           ),
         ),
       ),
-      initialRoute: WelcomeScreen.id ,
+      initialRoute: WelcomeScreen.id,
       routes: {
-        WelcomeScreen.id: (context) => const WelcomeScreen(), 
-        LoginScreen.id: (context) =>const LoginScreen(),  
-        RegistrationScreen.id: (context) =>const RegistrationScreen(), 
-        ChatScreen.id: (context) =>const ChatScreen(),
+        // all the routes added here
+        WelcomeScreen.id: (context) => const WelcomeScreen(),
+        LoginScreen.id: (context) => const LoginScreen(),
+        RegistrationScreen.id: (context) => const RegistrationScreen(),
+        ChatScreen.id: (context) => const ChatScreen(),
       },
     );
   }
