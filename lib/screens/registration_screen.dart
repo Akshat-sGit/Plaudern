@@ -48,7 +48,6 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                 color: Colors.black,
               ),
               onChanged: (value) {
-                //Do something with the user input.
                 email = value;
               },
               decoration: decoration.copyWith(hintText: "Enter your email"),
@@ -62,7 +61,6 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                 color: Colors.black,
               ),
               onChanged: (value) {
-                //Do something with the user input.
                 password = value;
               },
               decoration: decoration.copyWith(hintText: "Enter your password"),
@@ -79,9 +77,6 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                        _auth.createUserWithEmailAndPassword(
                         email: email, password: password);
                       Navigator.pushNamed(context, ChatScreen.id);
-                      // if(newUser != null){
-                      //   Navigator.pushNamed(context, ChatScreen.id);
-                      // }
                     }catch(e){
                       // ignore: avoid_print
                       print(e); 

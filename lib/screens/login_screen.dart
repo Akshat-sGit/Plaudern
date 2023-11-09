@@ -21,7 +21,6 @@ class _LoginScreenState extends State<LoginScreen> {
   late String password;
 
   void navigateToChatScreen(BuildContext context, user) {
-    // User? user = FirebaseAuth.instance.currentUser;
     try{
     if (user != null) {
       Navigator.pushNamed(context, ChatScreen.id);
@@ -59,7 +58,6 @@ class _LoginScreenState extends State<LoginScreen> {
                 color: Colors.black,
               ),
               onChanged: (value) {
-                //Do something with the user input.
                 email = value;
               },
               decoration: decoration.copyWith(hintText: "Enter your email"),
@@ -73,7 +71,6 @@ class _LoginScreenState extends State<LoginScreen> {
                 color: Colors.black,
               ),
               onChanged: (value) {
-                //Do something with the user input.
                 password = value;
               },
               decoration: decoration.copyWith(hintText: "Enter your password"),
