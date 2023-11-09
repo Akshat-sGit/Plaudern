@@ -12,6 +12,7 @@ class RegistrationScreen extends StatefulWidget {
   // ignore: library_private_types_in_public_api
   _RegistrationScreenState createState() => _RegistrationScreenState();
 }
+// all the firebase auth is completed
 
 class _RegistrationScreenState extends State<RegistrationScreen> {
   final _auth = FirebaseAuth.instance;
