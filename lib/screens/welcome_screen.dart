@@ -3,7 +3,7 @@ import 'package:flash_chat_flutter/screens/login_screen.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flash_chat_flutter/screens/registration_screen.dart';
 import 'package:flash_chat_flutter/components/rounded_button.dart'; 
-
+import 'package:google_fonts/google_fonts.dart';
 class WelcomeScreen extends StatefulWidget {
   static const String id = 'welcome_screen';
 
@@ -73,7 +73,7 @@ class _WelcomeScreenState extends State<WelcomeScreen>
                   animatedTexts: [
                     TypewriterAnimatedText(
                       "Flash Chat",
-                      textStyle:const TextStyle(
+                      textStyle:GoogleFonts.poppins(
                         color: Colors.black54,
                         fontSize: 35.0,
                         fontWeight: FontWeight.w900,
