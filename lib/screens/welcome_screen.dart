@@ -15,7 +15,7 @@ class WelcomeScreen extends StatefulWidget {
 }
 
 class _WelcomeScreenState extends State<WelcomeScreen>
-    with SingleTickerProviderStateMixin {
+  with SingleTickerProviderStateMixin {
   late AnimationController controller;
   late Animation animation;
 
@@ -31,8 +31,9 @@ class _WelcomeScreenState extends State<WelcomeScreen>
     );
 
     // animation = CurvedAnimation(parent: controller, curve: Curves.easeIn);
-    animation = ColorTween(begin: Colors.blueGrey, end: Colors.black).animate(controller);
-
+    animation = ColorTween(
+      begin: Colors.blueGrey, 
+      end: Colors.black).animate(controller);
     controller.forward();
 
     // animation.addStatusListener((status) {
@@ -71,13 +72,19 @@ class _WelcomeScreenState extends State<WelcomeScreen>
                 ),
                 AnimatedTextKit(
                   animatedTexts: [
-                    TypewriterAnimatedText(
+                    ColorizeAnimatedText(
                       "Flash Chat",
                       textStyle:GoogleFonts.poppins(
                         color: Colors.white,
                         fontSize: 35.0,
                         fontWeight: FontWeight.w900,
                       ),
+                      colors: [
+                        Colors.white,
+                        Colors.blue,
+                        Colors.yellow,
+                        Colors.red,
+                      ],
                       speed:const Duration(milliseconds: 200),
                     ),
                   ],

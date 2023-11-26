@@ -35,11 +35,13 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
-              Hero(
-                tag: "logo",
-                child: SizedBox(
-                  height: 200.0,
-                  child: Image.asset('images/logo.png'),
+              Flexible(
+                child: Hero(
+                  tag: "logo",
+                  child: SizedBox(
+                    height: 200.0,
+                    child: Image.asset('images/logo.png'),
+                  ),
                 ),
               ),
               const SizedBox(
@@ -54,12 +56,11 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                 onChanged: (value) {
                   email = value;
                 },
-                decoration: decoration.copyWith(hintText: "Enter your password",
+                decoration: decoration.copyWith(hintText: "Enter your email",
                 hintStyle:const TextStyle(
                   color: Colors.white
                 )
                 ),
-                obscureText: true,
               ),
               const SizedBox(
                 height: 8.0,
