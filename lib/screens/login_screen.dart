@@ -26,7 +26,7 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Material(
-      color: Colors.white,
+      color: Colors.black,
       child: ModalProgressHUD(
         inAsyncCall: showSpinner,
         child: Padding(
@@ -49,12 +49,16 @@ class _LoginScreenState extends State<LoginScreen> {
                 keyboardType: TextInputType.emailAddress,
                 textAlign: TextAlign.center,
                 style: const TextStyle(
-                  color: Colors.black,
+                  color: Colors.white,
                 ),
                 onChanged: (value) {
                   email = value;
                 },
-                decoration: decoration.copyWith(hintText: "Enter your email"),
+                decoration:decoration.copyWith(hintText: "Enter your email",
+                hintStyle:const TextStyle(
+                  color: Colors.white
+                )
+                ),
               ),
               const SizedBox(
                 height: 8.0,
@@ -62,12 +66,16 @@ class _LoginScreenState extends State<LoginScreen> {
               TextField(
                 textAlign: TextAlign.center,
                 style: const TextStyle(
-                  color: Colors.black,
+                  color: Colors.white,
                 ),
                 onChanged: (value) {
                   password = value;
                 },
-                decoration: decoration.copyWith(hintText: "Enter your password"),
+                decoration: decoration.copyWith(hintText: "Enter your password",
+                hintStyle:const TextStyle(
+                  color: Colors.white
+                )
+                ),
                 obscureText: true,
               ),
               const SizedBox(

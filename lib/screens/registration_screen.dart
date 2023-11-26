@@ -26,7 +26,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
   @override
   Widget build(BuildContext context) {
     return Material(
-      color: Colors.white,
+      color: Colors.black,
       child: ModalProgressHUD(
         inAsyncCall: showSpinner,
         child: Padding(
@@ -49,12 +49,17 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                 keyboardType: TextInputType.emailAddress,
                 textAlign: TextAlign.center,
                 style: const TextStyle(
-                  color: Colors.black,
+                  color: Colors.white,
                 ),
                 onChanged: (value) {
                   email = value;
                 },
-                decoration: decoration.copyWith(hintText: "Enter your email"),
+                decoration: decoration.copyWith(hintText: "Enter your password",
+                hintStyle:const TextStyle(
+                  color: Colors.white
+                )
+                ),
+                obscureText: true,
               ),
               const SizedBox(
                 height: 8.0,
@@ -62,12 +67,16 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
               TextField(
                 textAlign: TextAlign.center,
                 style: const TextStyle(
-                  color: Colors.black,
+                  color: Colors.white,
                 ),
                 onChanged: (value) {
                   password = value;
                 },
-                decoration: decoration.copyWith(hintText: "Enter your password"),
+                decoration: decoration.copyWith(hintText: "Enter your password",
+                hintStyle:const TextStyle(
+                  color: Colors.white
+                )
+                ),
                 obscureText: true,
               ),
               const SizedBox(

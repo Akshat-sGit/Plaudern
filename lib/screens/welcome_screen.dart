@@ -31,7 +31,7 @@ class _WelcomeScreenState extends State<WelcomeScreen>
     );
 
     // animation = CurvedAnimation(parent: controller, curve: Curves.easeIn);
-    animation = ColorTween(begin: Colors.blueGrey, end: Colors.white).animate(controller);
+    animation = ColorTween(begin: Colors.blueGrey, end: Colors.black).animate(controller);
 
     controller.forward();
 
@@ -74,7 +74,7 @@ class _WelcomeScreenState extends State<WelcomeScreen>
                     TypewriterAnimatedText(
                       "Flash Chat",
                       textStyle:GoogleFonts.poppins(
-                        color: Colors.black54,
+                        color: Colors.white,
                         fontSize: 35.0,
                         fontWeight: FontWeight.w900,
                       ),
