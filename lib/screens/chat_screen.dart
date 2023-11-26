@@ -36,7 +36,6 @@ class _ChatScreenState extends State<ChatScreen> {
     }
   }
 
-
   void messagesStream() async {
     await for (var snapshot in _fireStore.collection('1').snapshots()) {
       for (var message in snapshot.docs) {
@@ -59,7 +58,7 @@ class _ChatScreenState extends State<ChatScreen> {
                 _auth.signOut();
                 Navigator.popUntil(
                     context, ModalRoute.withName("login_screen"));
-                // messagesStream(); 
+                // messagesStream();
               }),
         ],
         title: const Text('⚡️Chat'),
@@ -70,6 +69,30 @@ class _ChatScreenState extends State<ChatScreen> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
+            StreamBuilder<QuerySnapshot>(
+              stream: _fireStore.collection('1').snapshots(),
+              builder: (context, snapshot) {
+                if (snapshot.hasData) {
+                  final message = snapshot.data!.docs;
+                  List<Widget> messageWidgets =
+                      []; // Changed List<Text> to List<Widget>
+
+                  for (var messages in message) {
+                    final messageText = messages.get('text'); 
+                    final messageSender = messages.get('sender');
+                    final messageWidget =
+                        Text('$messageText from $messageSender');
+                    messageWidgets.add(messageWidget);
+                  }
+                  return Column(
+                    children: messageWidgets,
+                  );
+                }
+                return const Center(
+                  child: CircularProgressIndicator(),
+                );
+              },
+            ),
             Container(
               decoration: kMessageContainerDecoration,
               child: Row(
