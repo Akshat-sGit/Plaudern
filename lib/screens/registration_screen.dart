@@ -13,7 +13,6 @@ class RegistrationScreen extends StatefulWidget {
   // ignore: library_private_types_in_public_api
   _RegistrationScreenState createState() => _RegistrationScreenState();
 }
-// all the firebase auth is completed
 
 class _RegistrationScreenState extends State<RegistrationScreen> {
   final _auth = FirebaseAuth.instance;
@@ -40,7 +39,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                   tag: "logo",
                   child: SizedBox(
                     height: 200.0,
-                    child: Image.asset('images/logo.png'),
+                    child: Image.asset('images/logo1.png'),
                   ),
                 ),
               ),

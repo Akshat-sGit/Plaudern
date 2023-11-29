@@ -30,25 +30,14 @@ class _WelcomeScreenState extends State<WelcomeScreen>
       upperBound: 1.0,
     );
 
-    // animation = CurvedAnimation(parent: controller, curve: Curves.easeIn);
+
     animation = ColorTween(
       begin: Colors.blueGrey, 
       end: Colors.black).animate(controller);
     controller.forward();
-
-    // animation.addStatusListener((status) {
-    //   if (status == AnimationStatus.completed) {
-    //     controller.reverse(from: 1.0);
-    //   } else if (status == AnimationStatus.dismissed) {
-    //     controller.forward();
-    //   }
-
     controller.addListener(() {
       setState(() {});
-      // print(animation.value);
     });
-
-    // });
   }
 
   @override
@@ -67,25 +56,21 @@ class _WelcomeScreenState extends State<WelcomeScreen>
                   tag: 'logo',
                   child: SizedBox(
                     height: controller.value * 100,
-                    child: Image.asset('images/logo.png'),
+                    child: Image.asset('images/logo1.png'),
                   ),
                 ),
                 AnimatedTextKit(
                   animatedTexts: [
-                    ColorizeAnimatedText(
-                      "Flash Chat",
+                    RotateAnimatedText(
+                      "Plaudern",
                       textStyle:GoogleFonts.poppins(
                         color: Colors.white,
                         fontSize: 35.0,
                         fontWeight: FontWeight.w900,
+                        letterSpacing: 0.5,
                       ),
-                      colors: [
-                        Colors.white,
-                        Colors.blue,
-                        Colors.yellow,
-                        Colors.red,
-                      ],
-                      speed:const Duration(milliseconds: 200),
+                      textAlign: TextAlign.start,
+                      rotateOut: false
                     ),
                   ],
                 )

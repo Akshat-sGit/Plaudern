@@ -3,6 +3,7 @@ import 'package:flash_chat_flutter/constants.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flash_chat_flutter/components/message_stream.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 final _fireStore = FirebaseFirestore.instance;
 late User loggedInUser;
@@ -66,9 +67,9 @@ class _ChatScreenState extends State<ChatScreen> {
                 // messagesStream();
               }),
         ],
-        title: const Text(
+        title:Text(
           'Chat',
-          style: TextStyle(
+          style: GoogleFonts.poppins(
             fontSize: 20.0,
           ),
         ),

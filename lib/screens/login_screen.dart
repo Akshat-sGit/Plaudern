@@ -5,7 +5,6 @@ import 'package:flash_chat_flutter/components/rounded_button.dart';
 import 'package:flash_chat_flutter/constants.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
-// import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 
 class LoginScreen extends StatefulWidget {
   static String id = 'login_screen';
@@ -22,6 +21,8 @@ class _LoginScreenState extends State<LoginScreen> {
   late String email;
   late String password;
   bool showSpinner = false;
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -39,13 +40,14 @@ class _LoginScreenState extends State<LoginScreen> {
                 tag: "logo",
                 child: SizedBox(
                   height: 200.0,
-                  child: Image.asset('images/logo.png'),
+                  child: Image.asset('images/logo1.png'),
                 ),
               ),
               const SizedBox(
                 height: 48.0,
               ),
               TextField(
+                controller: emailController,
                 keyboardType: TextInputType.emailAddress,
                 textAlign: TextAlign.center,
                 style: const TextStyle(
@@ -64,6 +66,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 height: 8.0,
               ),
               TextField(
+                controller: passwordController, 
                 textAlign: TextAlign.center,
                 style: const TextStyle(
                   color: Colors.white,
@@ -99,6 +102,10 @@ class _LoginScreenState extends State<LoginScreen> {
                       setState(() {
                         showSpinner = false;
                       });
+                      // clear the text field
+                      emailController.clear();
+                      passwordController.clear();
+
                     } catch (e) {
                       // ignore: avoid_print
                       print(e);
