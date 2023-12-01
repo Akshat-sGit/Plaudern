@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flash_chat_flutter/constants.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:flash_chat_flutter/components/message_stream.dart';
+import 'package:flash_chat_flutter/widgets/message_stream.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 final _fireStore = FirebaseFirestore.instance;
@@ -58,7 +58,6 @@ class _ChatScreenState extends State<ChatScreen> {
         actions: <Widget>[
           IconButton(
               icon: const Icon(Icons.logout),
-
               onPressed: () {
                 //Implemented logout functionality
                 _auth.signOut();
@@ -67,10 +66,11 @@ class _ChatScreenState extends State<ChatScreen> {
                 // messagesStream();
               }),
         ],
-        title:Text(
+        title: Text(
           'Chat',
           style: GoogleFonts.poppins(
             fontSize: 20.0,
+            fontWeight: FontWeight.w900,
           ),
         ),
         backgroundColor: Colors.black,
@@ -98,17 +98,21 @@ class _ChatScreenState extends State<ChatScreen> {
                     ),
                   ),
                   TextButton(
-                      child: const Icon(
-                        Icons.send,
-                      ),
-                      onPressed: () {
-                        messageTextController.clear();
-                        //Implement send functionality.
-                        _fireStore.collection('1').add({
+                    child: const Icon(
+                      Icons.send,
+                    ),
+                    onPressed: () {
+                      messageTextController.clear();
+                      //Implement send functionality.
+                      _fireStore.collection('1').add(
+                        {
                           'text': messageText,
                           'sender': loggedInUser.email,
-                        });
-                      }),
+                          'time': DateTime.now().toString(),
+                        },
+                      );
+                    },
+                  ),
                 ],
               ),
             ),

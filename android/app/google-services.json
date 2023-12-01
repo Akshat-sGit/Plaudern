@@ -1,32 +1,13 @@
 {
   "project_info": {
-    "project_number": "899604486643",
-    "project_id": "flash-chat-81c2a",
-    "storage_bucket": "flash-chat-81c2a.appspot.com"
+    "project_number": "835605683879",
+    "project_id": "plaudern-2e385",
+    "storage_bucket": "plaudern-2e385.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:899604486643:android:8d46177800a7483dc09a86",
-        "android_client_info": {
-          "package_name": "co.appbrewery.flash_chat"
-        }
-      },
-      "oauth_client": [],
-      "api_key": [
-        {
-          "current_key": "AIzaSyDb2SbRBHBXFEzZk9PDdAqHceAv35buIu4"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": []
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:899604486643:android:2d4ef53130eedea5c09a86",
+        "mobilesdk_app_id": "1:835605683879:android:58107beade753ecfdbc582",
         "android_client_info": {
           "package_name": "com.example.flash_chat_flutter"
         }
@@ -34,7 +15,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyDb2SbRBHBXFEzZk9PDdAqHceAv35buIu4"
+          "current_key": "AIzaSyABl1vFdd7M1LXDiQROBz0ue9tFrEEDHOg"
         }
       ],
       "services": {

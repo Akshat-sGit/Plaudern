@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flash_chat_flutter/screens/login_screen.dart';
+import 'package:flash_chat_flutter/view/login_screen.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
-import 'package:flash_chat_flutter/screens/registration_screen.dart';
-import 'package:flash_chat_flutter/components/rounded_button.dart'; 
+import 'package:flash_chat_flutter/view/registration_screen.dart';
+import 'package:flash_chat_flutter/widgets/rounded_button.dart';
 import 'package:google_fonts/google_fonts.dart';
+
 class WelcomeScreen extends StatefulWidget {
   static const String id = 'welcome_screen';
 
@@ -15,7 +16,7 @@ class WelcomeScreen extends StatefulWidget {
 }
 
 class _WelcomeScreenState extends State<WelcomeScreen>
-  with SingleTickerProviderStateMixin {
+    with SingleTickerProviderStateMixin {
   late AnimationController controller;
   late Animation animation;
 
@@ -23,17 +24,15 @@ class _WelcomeScreenState extends State<WelcomeScreen>
   void initState() {
     super.initState();
     controller = AnimationController(
-      duration:const Duration(
+      duration: const Duration(
         seconds: 3,
       ),
       vsync: this,
       upperBound: 1.0,
     );
 
-
-    animation = ColorTween(
-      begin: Colors.blueGrey, 
-      end: Colors.black).animate(controller);
+    animation = ColorTween(begin: Colors.blueGrey, end: Colors.black)
+        .animate(controller);
     controller.forward();
     controller.addListener(() {
       setState(() {});
@@ -45,7 +44,7 @@ class _WelcomeScreenState extends State<WelcomeScreen>
     return Scaffold(
       backgroundColor: animation.value,
       body: Padding(
-        padding:const EdgeInsets.symmetric(horizontal: 24.0),
+        padding: const EdgeInsets.symmetric(horizontal: 24.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -61,17 +60,15 @@ class _WelcomeScreenState extends State<WelcomeScreen>
                 ),
                 AnimatedTextKit(
                   animatedTexts: [
-                    RotateAnimatedText(
-                      "Plaudern",
-                      textStyle:GoogleFonts.poppins(
-                        color: Colors.white,
-                        fontSize: 35.0,
-                        fontWeight: FontWeight.w900,
-                        letterSpacing: 0.5,
-                      ),
-                      textAlign: TextAlign.start,
-                      rotateOut: false
-                    ),
+                    RotateAnimatedText("Plaudern",
+                        textStyle: GoogleFonts.poppins(
+                          color: Colors.white,
+                          fontSize: 35.0,
+                          fontWeight: FontWeight.w900,
+                          letterSpacing: 0.5,
+                        ),
+                        textAlign: TextAlign.start,
+                        rotateOut: false),
                   ],
                 )
               ],
@@ -99,4 +96,3 @@ class _WelcomeScreenState extends State<WelcomeScreen>
     );
   }
 }
-
