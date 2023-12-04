@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flash_chat_flutter/view/login_screen.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flash_chat_flutter/view/registration_screen.dart';
-import 'package:flash_chat_flutter/widgets/rounded_button.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class WelcomeScreen extends StatefulWidget {
@@ -49,47 +48,120 @@ class _WelcomeScreenState extends State<WelcomeScreen>
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            Row(
-              children: [
-                Hero(
-                  tag: 'logo',
-                  child: SizedBox(
-                    height: controller.value * 100,
-                    child: Image.asset('images/logo1.png'),
+            Container(
+              padding: const EdgeInsets.all(20.0),
+              decoration: BoxDecoration(
+                color: Colors.blue,
+                borderRadius: BorderRadius.circular(30.0),
+              ),
+              // color: Colors.blue,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Hero(
+                    tag: 'logo',
+                    child: SizedBox(
+                      height: controller.value * 100,
+                      child: Image.asset('images/logo1.png'),
+                    ),
                   ),
-                ),
-                AnimatedTextKit(
-                  animatedTexts: [
-                    RotateAnimatedText("Plaudern",
-                        textStyle: GoogleFonts.poppins(
-                          color: Colors.white,
-                          fontSize: 35.0,
-                          fontWeight: FontWeight.w900,
-                          letterSpacing: 0.5,
-                        ),
-                        textAlign: TextAlign.start,
-                        rotateOut: false),
-                  ],
-                )
-              ],
+                  AnimatedTextKit(
+                    animatedTexts: [
+                      TyperAnimatedText("Plaudern",
+                          textStyle: GoogleFonts.poppins(
+                            color: Colors.white,
+                            fontSize: 50.0,
+                            fontWeight: FontWeight.w900,
+                            letterSpacing: 0.5,
+                          ),
+                          textAlign: TextAlign.start,
+                          speed: const Duration(milliseconds: 100)),
+                    ],
+                  )
+                ],
+              ),
             ),
             const SizedBox(
               height: 48.0,
             ),
-            RoundedButton(
-              colour: Colors.lightBlue,
-              title: "Log In",
-              onPressed: () {
-                //Go to login screen.
-                Navigator.pushNamed(context, LoginScreen.id);
-              },
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.end, 
+              children: [
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        RawMaterialButton(
+                          fillColor: Colors.lightBlueAccent,
+                          elevation: 5.0,
+                          shape: const CircleBorder(),
+                          constraints: const BoxConstraints.tightFor(
+                            width: 100.0,
+                            height: 100.0,
+                          ),
+                          onPressed: () {
+                            //Go to login screen.
+                            Navigator.pushNamed(context, LoginScreen.id);
+                          },
+                          child: const Icon(
+                            Icons.login,
+                            color: Colors.white,
+                          ),
+                        ),
+                        const SizedBox(
+                          height: 10.0,
+                        ),
+                        Text(
+                          'Login',
+                          style: GoogleFonts.poppins(
+                            color: Colors.white,
+                            fontSize: 20.0,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+                const SizedBox(
+                  width: 60.0,
+                ),
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    RawMaterialButton(
+                      shape: const CircleBorder(),
+                      constraints: const BoxConstraints.tightFor(
+                        width: 100.0,
+                        height: 100.0,
+                      ),
+                      fillColor: Colors.blueAccent,
+                      onPressed: () {
+                        Navigator.pushNamed(context, RegistrationScreen.id);
+                      },
+                      child: const Icon(
+                        Icons.app_registration,
+                        color: Colors.white,
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 10.0,
+                    ),
+                    Text(
+                      'Registrier',
+                      style: GoogleFonts.poppins(
+                        color: Colors.white,
+                        fontSize: 20.0,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ],
+                ),
+              ],
             ),
-            RoundedButton(
-                colour: const Color.fromARGB(255, 25, 104, 239),
-                title: 'Register',
-                onPressed: () {
-                  Navigator.pushNamed(context, RegistrationScreen.id);
-                }),
           ],
         ),
       ),
