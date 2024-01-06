@@ -54,7 +54,6 @@ class _WelcomeScreenState extends State<WelcomeScreen>
                 color: Colors.blue,
                 borderRadius: BorderRadius.circular(30.0),
               ),
-              // color: Colors.blue,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
