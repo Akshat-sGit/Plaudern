@@ -47,18 +47,21 @@ class _LoginScreenState extends State<LoginScreen> {
                 height: 48.0,
               ),
               TextField(
+                
                 controller: emailController,
                 keyboardType: TextInputType.emailAddress,
                 textAlign: TextAlign.center,
                 style: const TextStyle(
-                  color: Colors.white,
+                  color: Colors.black,
                 ),
                 onChanged: (value) {
                   email = value;
                 },
                 decoration: decoration.copyWith(
                     hintText: "Enter your email",
-                    hintStyle: const TextStyle(color: Colors.white)),
+                    hintStyle: const TextStyle(color: Colors.black),
+                ),
+
               ),
               const SizedBox(
                 height: 8.0,
