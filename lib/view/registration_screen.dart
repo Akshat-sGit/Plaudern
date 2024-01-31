@@ -1,4 +1,4 @@
-import 'package:flash_chat_flutter/constants.dart';
+// import 'package:flash_chat_flutter/constants.dart';
 import 'package:flash_chat_flutter/view/chat/chat_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flash_chat_flutter/widgets/rounded_button.dart';
@@ -25,7 +25,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
   @override
   Widget build(BuildContext context) {
     return Material(
-      color: Colors.black,
+      color: Colors.blue,
       child: ModalProgressHUD(
         inAsyncCall: showSpinner,
         child: Padding(
@@ -46,38 +46,74 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
               const SizedBox(
                 height: 48.0,
               ),
-              TextField(
-                keyboardType: TextInputType.emailAddress,
-                textAlign: TextAlign.center,
-                style: const TextStyle(
-                  color: Colors.white,
+              Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(20.0),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.green.withOpacity(0.5),
+                      spreadRadius: 2,
+                      blurRadius: 5,
+                      offset: const Offset(0, 2),
+                    ),
+                  ],
                 ),
-                onChanged: (value) {
-                  email = value;
-                },
-                decoration: decoration.copyWith(hintText: "Enter your email",
-                hintStyle:const TextStyle(
-                  color: Colors.white
-                )
+                child: TextField(
+                  keyboardType: TextInputType.emailAddress,
+                  textAlign: TextAlign.center,
+                  style: const TextStyle(
+                    color: Colors.white,
+                  ),
+                  onChanged: (value) {
+                    email = value;
+                  },
+                  decoration: const InputDecoration(
+                    hintText: "Enter your email",
+                    hintStyle: TextStyle(
+                        color: Colors.black, fontWeight: FontWeight.bold),
+                    fillColor: Colors.white,
+                    filled: true,
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.all(Radius.circular(20.0)),
+                    ),
+                  ),
                 ),
               ),
               const SizedBox(
                 height: 8.0,
               ),
-              TextField(
-                textAlign: TextAlign.center,
-                style: const TextStyle(
-                  color: Colors.white,
+              Container(
+                decoration: BoxDecoration(
+                  borderRadius: const BorderRadius.all(Radius.circular(20.0)),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.green.withOpacity(0.5),
+                      spreadRadius: 2,
+                      blurRadius: 5,
+                      offset: const Offset(0, 2),
+                    ),
+                  ],
                 ),
-                onChanged: (value) {
-                  password = value;
-                },
-                decoration: decoration.copyWith(hintText: "Enter your password",
-                hintStyle:const TextStyle(
-                  color: Colors.white
-                )
+                child: TextField(
+                  keyboardType: TextInputType.emailAddress,
+                  textAlign: TextAlign.center,
+                  style: const TextStyle(
+                    color: Colors.white,
+                  ),
+                  onChanged: (value) {
+                    password = value;
+                  },
+                  decoration: const InputDecoration(
+                    hintText: "Enter your password",
+                    hintStyle: TextStyle(
+                        color: Colors.black, fontWeight: FontWeight.bold),
+                    fillColor: Colors.white,
+                    filled: true,
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.all(Radius.circular(20.0)),
+                    ),
+                  ),
                 ),
-                obscureText: true,
               ),
               const SizedBox(
                 height: 24.0,

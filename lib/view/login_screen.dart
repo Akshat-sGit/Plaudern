@@ -36,11 +36,13 @@ class _LoginScreenState extends State<LoginScreen> {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
-              Hero(
-                tag: "logo",
-                child: SizedBox(
-                  height: 200.0,
-                  child: Image.asset('images/logo1.png'),
+              Flexible(
+                child: Hero(
+                  tag: "logo",
+                  child: SizedBox(
+                    height: 200.0,
+                    child: Image.asset('images/logo1.png'),
+                  ),
                 ),
               ),
               const SizedBox(
@@ -103,7 +105,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     color: Colors.white,
                   ),
                   onChanged: (value) {
-                    email = value;
+                    password = value;
                   },
                   decoration: const InputDecoration(
                     hintText: "Enter your password",
