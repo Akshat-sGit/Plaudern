@@ -2,7 +2,7 @@
 import 'package:flash_chat_flutter/view/chat/chat_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flash_chat_flutter/widgets/rounded_button.dart';
-import 'package:flash_chat_flutter/constants.dart';
+// import 'package:flash_chat_flutter/constants.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 
@@ -27,7 +27,7 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Material(
-      color: Colors.black,
+      color: Colors.blue,
       child: ModalProgressHUD(
         inAsyncCall: showSpinner,
         child: Padding(
@@ -46,45 +46,82 @@ class _LoginScreenState extends State<LoginScreen> {
               const SizedBox(
                 height: 48.0,
               ),
-              TextField(
-                
-                controller: emailController,
-                keyboardType: TextInputType.emailAddress,
-                textAlign: TextAlign.center,
-                style: const TextStyle(
-                  color: Colors.black,
+              Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(20.0),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.green.withOpacity(0.5),
+                      spreadRadius: 2,
+                      blurRadius: 5,
+                      offset: const Offset(0, 2),
+                    ),
+                  ],
                 ),
-                onChanged: (value) {
-                  email = value;
-                },
-                decoration: decoration.copyWith(
+                child: TextField(
+                  controller: emailController,
+                  keyboardType: TextInputType.emailAddress,
+                  textAlign: TextAlign.center,
+                  style: const TextStyle(
+                    color: Colors.white,
+                  ),
+                  onChanged: (value) {
+                    email = value;
+                  },
+                  decoration: const InputDecoration(
                     hintText: "Enter your email",
-                    hintStyle: const TextStyle(color: Colors.black),
+                    hintStyle: TextStyle(
+                        color: Colors.black, fontWeight: FontWeight.bold),
+                    fillColor: Colors.white,
+                    filled: true,
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.all(Radius.circular(20.0)),
+                    ),
+                  ),
                 ),
-
               ),
               const SizedBox(
                 height: 8.0,
               ),
-              TextField(
-                controller: passwordController,
-                textAlign: TextAlign.center,
-                style: const TextStyle(
-                  color: Colors.white,
+              Container(
+                decoration: BoxDecoration(
+                  borderRadius: const BorderRadius.all(Radius.circular(20.0)),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.green.withOpacity(0.5),
+                      spreadRadius: 2,
+                      blurRadius: 5,
+                      offset: const Offset(0, 2),
+                    ),
+                  ],
                 ),
-                onChanged: (value) {
-                  password = value;
-                },
-                decoration: decoration.copyWith(
+                child: TextField(
+                  controller: emailController,
+                  keyboardType: TextInputType.emailAddress,
+                  textAlign: TextAlign.center,
+                  style: const TextStyle(
+                    color: Colors.white,
+                  ),
+                  onChanged: (value) {
+                    email = value;
+                  },
+                  decoration: const InputDecoration(
                     hintText: "Enter your password",
-                    hintStyle: const TextStyle(color: Colors.white)),
-                obscureText: true,
+                    hintStyle: TextStyle(
+                        color: Colors.black, fontWeight: FontWeight.bold),
+                    fillColor: Colors.white,
+                    filled: true,
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.all(Radius.circular(20.0)),
+                    ),
+                  ),
+                ),
               ),
               const SizedBox(
                 height: 24.0,
               ),
               RoundedButton(
-                  colour: Colors.lightBlue,
+                  colour: Colors.black,
                   title: "Log In",
                   onPressed: () {
                     setState(() {
