@@ -65,7 +65,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   keyboardType: TextInputType.emailAddress,
                   textAlign: TextAlign.center,
                   style: const TextStyle(
-                    color: Colors.white,
+                    color: Colors.black,
                   ),
                   onChanged: (value) {
                     email = value;
@@ -98,11 +98,11 @@ class _LoginScreenState extends State<LoginScreen> {
                   ],
                 ),
                 child: TextField(
-                  controller: emailController,
+                  controller: passwordController,
                   keyboardType: TextInputType.emailAddress,
                   textAlign: TextAlign.center,
                   style: const TextStyle(
-                    color: Colors.white,
+                    color: Colors.black,
                   ),
                   onChanged: (value) {
                     password = value;
@@ -117,6 +117,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       borderRadius: BorderRadius.all(Radius.circular(20.0)),
                     ),
                   ),
+                  obscureText: true,
                 ),
               ),
               const SizedBox(

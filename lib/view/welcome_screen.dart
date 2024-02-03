@@ -48,37 +48,30 @@ class _WelcomeScreenState extends State<WelcomeScreen>
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            Container(
-              padding: const EdgeInsets.all(20.0),
-              decoration: BoxDecoration(
-                color: Colors.blue,
-                borderRadius: BorderRadius.circular(30.0),
-              ),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Hero(
-                    tag: 'logo',
-                    child: SizedBox(
-                      height: controller.value * 100,
-                      child: Image.asset('images/logo1.png'),
-                    ),
+            Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Hero(
+                  tag: 'logo',
+                  child: SizedBox(
+                    height: controller.value * 100,
+                    child: Image.asset('images/logo1.png'),
                   ),
-                  AnimatedTextKit(
-                    animatedTexts: [
-                      TyperAnimatedText("Plaudern",
-                          textStyle: GoogleFonts.poppins(
-                            color: Colors.white,
-                            fontSize: 50.0,
-                            fontWeight: FontWeight.w900,
-                            letterSpacing: 0.5,
-                          ),
-                          textAlign: TextAlign.start,
-                          speed: const Duration(milliseconds: 100)),
-                    ],
-                  )
-                ],
-              ),
+                ),
+                AnimatedTextKit(
+                  animatedTexts: [
+                    TyperAnimatedText("Plaudern",
+                        textStyle: GoogleFonts.poppins(
+                          color: Colors.white,
+                          fontSize: 50.0,
+                          fontWeight: FontWeight.w900,
+                          letterSpacing: 0.5,
+                        ),
+                        textAlign: TextAlign.start,
+                        speed: const Duration(milliseconds: 100)),
+                  ],
+                )
+              ],
             ),
             const SizedBox(
               height: 48.0,
@@ -94,7 +87,7 @@ class _WelcomeScreenState extends State<WelcomeScreen>
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         RawMaterialButton(
-                          fillColor: Colors.lightBlueAccent,
+                          fillColor: Colors.yellow,
                           elevation: 5.0,
                           shape: const CircleBorder(),
                           constraints: const BoxConstraints.tightFor(
@@ -107,7 +100,7 @@ class _WelcomeScreenState extends State<WelcomeScreen>
                           },
                           child: const Icon(
                             Icons.login,
-                            color: Colors.white,
+                            color: Colors.black,
                           ),
                         ),
                         const SizedBox(
@@ -137,13 +130,13 @@ class _WelcomeScreenState extends State<WelcomeScreen>
                         width: 100.0,
                         height: 100.0,
                       ),
-                      fillColor: Colors.blueAccent,
+                      fillColor: Colors.orange,
                       onPressed: () {
                         Navigator.pushNamed(context, RegistrationScreen.id);
                       },
                       child: const Icon(
                         Icons.app_registration,
-                        color: Colors.white,
+                        color: Colors.black,
                       ),
                     ),
                     const SizedBox(

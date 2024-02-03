@@ -62,7 +62,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                   keyboardType: TextInputType.emailAddress,
                   textAlign: TextAlign.center,
                   style: const TextStyle(
-                    color: Colors.white,
+                    color: Colors.black,
                   ),
                   onChanged: (value) {
                     email = value;
@@ -98,7 +98,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                   keyboardType: TextInputType.emailAddress,
                   textAlign: TextAlign.center,
                   style: const TextStyle(
-                    color: Colors.white,
+                    color: Colors.black,
                   ),
                   onChanged: (value) {
                     password = value;
@@ -113,6 +113,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                       borderRadius: BorderRadius.all(Radius.circular(20.0)),
                     ),
                   ),
+                  obscureText: true,
                 ),
               ),
               const SizedBox(
