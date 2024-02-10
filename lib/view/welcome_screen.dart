@@ -14,8 +14,8 @@ class WelcomeScreen extends StatefulWidget {
   _WelcomeScreenState createState() => _WelcomeScreenState();
 }
 
-class _WelcomeScreenState extends State<WelcomeScreen> with SingleTickerProviderStateMixin {
-  
+class _WelcomeScreenState extends State<WelcomeScreen>
+    with SingleTickerProviderStateMixin {
   late AnimationController controller;
   late Animation animation;
 
@@ -66,6 +66,13 @@ class _WelcomeScreenState extends State<WelcomeScreen> with SingleTickerProvider
                           fontSize: 50.0,
                           fontWeight: FontWeight.w900,
                           letterSpacing: 0.5,
+                          shadows: [
+                            const Shadow(
+                              color: Color.fromARGB(255, 20, 168, 3),
+                              blurRadius: 5.0,
+                              offset: Offset(5.0, 5.0),
+                            ),
+                          ],
                         ),
                         textAlign: TextAlign.start,
                         speed: const Duration(milliseconds: 100)),
@@ -78,7 +85,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> with SingleTickerProvider
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.end, 
+              crossAxisAlignment: CrossAxisAlignment.end,
               children: [
                 Column(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -112,6 +119,13 @@ class _WelcomeScreenState extends State<WelcomeScreen> with SingleTickerProvider
                             color: Colors.white,
                             fontSize: 20.0,
                             fontWeight: FontWeight.bold,
+                            shadows: [
+                              const Shadow(
+                                color: Colors.black,
+                                blurRadius: 5.0,
+                                offset: Offset(5.0, 5.0),
+                              ),
+                            ],
                           ),
                         ),
                       ],
@@ -148,6 +162,13 @@ class _WelcomeScreenState extends State<WelcomeScreen> with SingleTickerProvider
                         color: Colors.white,
                         fontSize: 20.0,
                         fontWeight: FontWeight.bold,
+                        shadows: [
+                          const Shadow(
+                            color: Colors.black,
+                            blurRadius: 5.0,
+                            offset: Offset(5.0, 5.0),
+                          ),
+                        ],
                       ),
                     ),
                   ],
