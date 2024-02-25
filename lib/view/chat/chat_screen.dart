@@ -5,7 +5,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flash_chat_flutter/widgets/message_stream.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-final _fireStore = FirebaseFirestore.instance;
+final _fireStore = FirebaseFirestore.instance; 
 late User loggedInUser;
 
 class ChatScreen extends StatefulWidget {
